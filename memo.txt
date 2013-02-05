@@ -1,0 +1,10 @@
+# -*- encoding : utf-8 -*-
+コメントは、# を使う
+行末の　セミコロンは省略可能
+シンボルは、　jp = {hoge: "momomo", fuga: "bobobo"}
+jp[:hoge]  という取り出し方が使える
+
+インデントは、スペース２文字
+
+puts "hoge" if a >0
+という書き方もできる
