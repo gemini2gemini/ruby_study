@@ -1,0 +1,28 @@
+<h1>やること一覧</h1>
+
+<table>
+  <tr>
+    <th>Due</th>
+    <th>UserName</th>
+    <th>Task</th>
+    <th>Memo</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todos.each do |todo| %>
+  <tr>
+    <td><%= todo.due %></td>
+    <td><%= todo.user.name %></td>
+    <td><%= todo.task %></td>
+    <td><%= todo.memo %></td>
+    <td><%= link_to 'Show', todo_path(todo) %></td>
+    <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+    <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Todo', new_todo_path %>

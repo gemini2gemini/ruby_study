@@ -1,0 +1,63 @@
+読むと良い本
+
+達人プログラマー―システム開発の職人から名匠への道
+Patterns of Enterprise Application Architecture (Addison-Wesley Signature Series
+
+
+unixコマンド
+help を入れる
+
+rails コマンド
+rails --help
+
+アプリケーション（プロジェクト）の作成
+rails new  appname
+
+scaffoldの使い方の表示
+rails g scaffold --help
+
+scaffoldの作り方
+rails g scaffold tablename column:type column2:type
+
+rakeコマンドの使い方
+rake --tasks
+
+テーブルの作成・実行
+rake db:migrate
+
+sqlite3コマンド
+sqlite3 --help
+
+サーバーの起動
+rails server
+
+
+railsアプリケーションのファイルについて
+Gemfile -- gemの設定(人が書くもの）
+Gemfile.lock 
+
+
+リンクを組み立てるメソッド
+<a href="リンクパス">リンク文字列</a>
+<%= link_to リンク文字列, リンクパス %>
+
+
+外部からの書き換え可能を制御
+attr_accessible :due, :task
+
+
+※ビューの中にあるインスタンス変数は、コントローラーが設定している
+
+
+format.json    formatの後ろにあるリクエストがきたときに、その後ろのブロックを実行
+format.html   
+
+render で呼び出されるテンプレートには、
+ファイル名には、　_をつける　　
+render "form"
+例　　_form.html.erb  などのように
+
+コントローラーの　メソッド名と使用されるテンプレート名は同じにする
+
+変更の動作があると、 reirect_to　で　特定のページを表示させることが多い
+

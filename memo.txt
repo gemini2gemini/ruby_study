@@ -36,5 +36,5 @@ puts "hoge" if a >0
 attr_accessor :h, :w
 attr_reader :x, :y
 
-
-
+ライブラリ群
+rubygems.org

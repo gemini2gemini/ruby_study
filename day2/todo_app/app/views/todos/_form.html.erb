@@ -1,0 +1,34 @@
+<%= form_for(@todo) do |f| %>
+  <% if @todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @todo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :due %><br />
+    <%= f.date_select :due, :use_month_numbers => true %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.select :user_id, User.all.map {|v| [ v.name,v.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :task %><br />
+    <%= f.text_field :task %>
+  </div>
+  <div class="field">
+    <%= f.label :memo %><br />
+    <%= f.text_area :memo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
