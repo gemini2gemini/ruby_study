@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_filter :require_login
+
   # GET /todos
   def index
 
@@ -55,6 +57,12 @@ class TodosController < ApplicationController
     redirect_to todos_url
   end
 
+  private
 
+  def require_login
+    if session[:login] == nil
+      redirect_to new_login_url
+    end
+  end
 
 end

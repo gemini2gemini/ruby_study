@@ -15,17 +15,11 @@ class User < ActiveRecord::Base
 
   def registered?
     u = User.where("email" => self.email).first
-    if u
-      if Digest::SHA1.hexdigest(self.password) == u.password
+      if u && Digest::SHA1.hexdigest(self.password) == u.password
         self.id = u.id
         return true
       else
         return false
       end
-      return true
-    else
-      return false
-    end
-
   end
 end
